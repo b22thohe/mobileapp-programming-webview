@@ -55,7 +55,7 @@ The app was tested in the emulator with successful result (see Image 1 and 2).
 **Image 1 - External webpage **  <br/><br/>
 ![image 1](external_webpage.png)
 
-![test](image.jpg)
+
 
 **Image 2 - Internal webpage **  <br/><br/>
 ![image 2](internal_webpage.png)
