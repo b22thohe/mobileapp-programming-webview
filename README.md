@@ -1,5 +1,5 @@
 
-# Rapport
+# Report
 
 The app name was changed to “b22thohe webview” in strings.xml and internet access was enabled in 
 AndroidManifest.xml. The existing textview element was deleted and a webview element was placed
