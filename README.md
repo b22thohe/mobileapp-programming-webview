@@ -1,42 +1,61 @@
 
 # Rapport
 
-**Skriv din rapport här!**
+The app name was changed to “b22thohe webview” in strings.xml and internet access was enabled in 
+AndroidManifest.xml. The existing textview element was deleted and a webview element was placed
+instead and given the id "my_webview". This part was done using the graphical user interface.
 
-_Du kan ta bort all text som finns sedan tidigare_.
+These changes was push to the Github repository.
 
-## Följande grundsyn gäller dugga-svar:
+The MainActivity.java file was opened in the editor and a variable named "myWebView" was added. This
+required the addition of an import statement with the WebView class.
 
-- Ett kortfattat svar är att föredra. Svar som är längre än en sida text (skärmdumpar och programkod exkluderat) är onödigt långt.
-- Svaret skall ha minst en snutt programkod.
-- Svaret skall inkludera en kort övergripande förklarande text som redogör för vad respektive snutt programkod gör eller som svarar på annan teorifråga.
-- Svaret skall ha minst en skärmdump. Skärmdumpar skall illustrera exekvering av relevant programkod. Eventuell text i skärmdumpar måste vara läsbar.
-- I de fall detta efterfrågas, dela upp delar av ditt svar i för- och nackdelar. Dina för- respektive nackdelar skall vara i form av punktlistor med kortare stycken (3-4 meningar).
-
-Programkod ska se ut som exemplet nedan. Koden måste vara korrekt indenterad då den blir lättare att läsa vilket gör det lättare att hitta syntaktiska fel.
+In the onCreate method, the webview element was located by its id and assigned to a variable. A new 
+WebViewClient was created and set to the webview element. These changes are shown in this code
+listing:
 
 ```
-function errorCallback(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            // Geolocation API stöds inte, gör något
-            break;
-        case error.POSITION_UNAVAILABLE:
-            // Misslyckat positionsanrop, gör något
-            break;
-        case error.UNKNOWN_ERROR:
-            // Okänt fel, gör något
-            break;
-    }
+myWebView = findViewById(R.id.my_webview);
+myWebView.setWebViewClient(new WebViewClient());
+```
+
+These changes was push to the Github repository.
+
+Javascript execution was enabled which required import of the WebSettings class. A statement to load
+a URL into the webview element.
+
+These changes was push to the Github repository.
+
+The URL load statement was moved into the showExternalWebPage() and showInternalWebPage() methods.
+An assets folder was created and the file "about.html" was added to it. The URL load statement in
+the in showInternalWebPage() method was edited to point to about.html.
+
+Inside the onOptionsItemSelected() method, calls were added to the show webpage methods to trigger 
+them when menu options are selected by the user:
+
+```
+if (id == R.id.action_external_web) {
+    Log.d("==>","Will display external web page");
+    showExternalWebPage();
 }
+
+ if (id == R.id.action_internal_web) {
+    Log.d("==>","Will display internal web page");
+    showInternalWebPage();
+ }
 ```
 
-Bilder läggs i samma mapp som markdown-filen.
+These changes was push to the Github repository.
 
-![](android.png)
+A faulty statement was discovered on line 23 in MainActivity.java and was corrected. This change was 
+committed and pushed to Github.
 
-Läs gärna:
+The app was tested in the emulator with successful result (see Image 1 and 2).
 
-- Boulos, M.N.K., Warren, J., Gong, J. & Yue, P. (2010) Web GIS in practice VIII: HTML5 and the canvas element for interactive online mapping. International journal of health geographics 9, 14. Shin, Y. &
-- Wunsche, B.C. (2013) A smartphone-based golf simulation exercise game for supporting arthritis patients. 2013 28th International Conference of Image and Vision Computing New Zealand (IVCNZ), IEEE, pp. 459–464.
-- Wohlin, C., Runeson, P., Höst, M., Ohlsson, M.C., Regnell, B., Wesslén, A. (2012) Experimentation in Software Engineering, Berlin, Heidelberg: Springer Berlin Heidelberg.
+**Image 1 - External webpage **  <br/><br/>
+![](external_webpage.PNG)
+
+**Image 2 - Internal webpage **  <br/><br/>
+![](internal_webpage.PNG)
+
+A final commit and push was made for this file to be uploaded.
