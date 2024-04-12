@@ -53,9 +53,11 @@ committed and pushed to Github.
 The app was tested in the emulator with successful result (see Image 1 and 2).
 
 **Image 1 - External webpage **  <br/><br/>
-![](external_webpage.png)
+![image 1](external_webpage.png)
+
+![test](image.jpg)
 
 **Image 2 - Internal webpage **  <br/><br/>
-![](internal_webpage.png)
+![image 2](internal_webpage.png)
 
 A final commit and push was made for this file to be uploaded.
